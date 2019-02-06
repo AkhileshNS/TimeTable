@@ -1,0 +1,195 @@
+.AppBar {
+    position: fixed; top:0; left:0;
+    height: 80px;
+    width: 100%;
+    padding: 0px 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--primary);
+    z-index: 98;
+}
+
+.AppBar > h3 {
+    color: white;
+    margin-right: auto;
+    text-overflow: ellipsis
+}
+
+.Backdrop, .Sidedrawer, .AppBar > img {
+    display: none;
+}
+
+/* Menu Options and Animation */
+.btn {
+    position: relative;
+    color: var(--menu-color);
+    margin: 0px 10px;
+    text-decoration: none;
+    padding: 8px 0px;
+    cursor: pointer;
+}
+.btn:hover {
+    color: white;
+}
+.btn:before, .btn:after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: white;
+}
+.btn:before {
+    opacity: 0;
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.btn:after {
+    opacity: 0;
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.btn:hover:before, .btn:hover:after, .btn:focus:before, .btn:focus:after {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+.btn:hover:before, .btn:focus:before {
+    transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.btn:hover:after, .btn:focus:after {
+    transition: opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
+    transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+  
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f1f1f1;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+/* Links inside the dropdown */
+.dropdown-content p {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+  
+/* Change color of dropdown links on hover */
+.dropdown-content p:hover {background-color: #ddd;}
+  
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+@media only screen and (max-width: 768px) {
+    .AppBar {
+        padding: 0px 10px;
+    }
+    .AppBar > p, .AppBar > .dropdown {
+        display: none;
+    }
+    .AppBar > img {
+        height: 30px;
+        padding-right: 16px;
+        display: block;
+        cursor: pointer;
+    }
+    .Backdrop {
+        background-color: black;
+        opacity: 0.5;
+        position: fixed; top:0; left:0;
+        height: 100vh; 
+        width: 100vw;
+        z-index: 99;
+        display: block;
+    }
+    .Sidedrawer {
+        background-color: var(--dark-bg);
+        position: fixed; top:0; left:0;
+        height: 100vh;
+        max-width: 300px;
+        width: 80%;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .btn {
+        padding: 20px 0px;
+        margin: 0;
+        color: var(--white-smoke);
+        border-bottom: 1px solid var(--line-black);
+        cursor: pointer;
+        padding-left: 20px;
+    }
+    .btn:before, .btn:after {background: none;}
+    .btn:hover {
+        color: white;
+    }
+    .dropdown {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        border-bottom: 1px solid var(--line-black);
+    }
+    .dropdown > .btn {
+        border: none;
+    }
+    .dropdown-content {
+        width: 100%;
+        display: block;
+        position: unset;
+        left: unset; transform: unset;
+        background: none;   
+        box-shadow: none;
+        transition: all 1s ease;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+    .dropdown-content p {
+        color: var(--white-smoke);
+        padding: 20px;
+    }
+    .dropdown-content p:hover {
+        background: none;
+        color: white;
+    }
+    .dropdown:hover .btn {
+        padding-bottom: 10px;
+        color: white;
+    }
+    .dropdown:hover .dropdown-content {
+        margin-bottom: 10px;
+        height: auto;
+        opacity: 1;
+    }
+}

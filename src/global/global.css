@@ -1,0 +1,113 @@
+body {
+    --primary: #6C63FF;
+    --primary-dark: #463AFF;
+    --secondary: #4641FF;
+    --text-color: #666;
+    --heading-color: #111;
+    --alt-bg: #F7F7F7;
+    --dark-bg: #333C44;
+    --accent: #06D19C;
+    --line-color: #EEEEEE;
+    --error-color: #ff5039;
+    --menu-color: #DAD8FF;
+    --line-black: #485057;
+    --box-color: #FCFCFC;
+    --border-color: #F0F0F0;
+    --white-smoke: #b7b7b7;
+    --material-btn: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+
+    --h1: 2.074em;
+    --h2: 1.728em;
+    --h3: 1.44em;
+    --h4: 1.2em;
+    --h6: 0.833em;
+    --p: 1em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 120%;
+    font-family: 'Lato', sans-serif; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Typography */
+
+h2 {
+    font-size: var(--h2);
+    font-weight: 400;
+    color: var(--heading-color);
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+h2.large {
+    font-size: var(--h1);
+}
+
+h3 {
+    font-size: var(--h3);
+    font-weight: 400;
+    color: var(--heading-color);
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+h3.small {
+    font-size: var(--h4);
+}
+
+p {
+    font-size: var(--p);
+    font-weight: 400;
+    color: var(--text-color);
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+h6 {
+    font-size: var(--h6);
+    font-weight: 400;
+    color: var(--text-color);
+} 
+
+.error {
+    color: var(--error-color);
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.selectable {
+    -webkit-user-select: auto;
+    -khtml-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    -o-user-select: auto;
+    user-select: auto;
+}

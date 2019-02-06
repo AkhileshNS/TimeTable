@@ -1,6 +1,10 @@
+
+// External Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
+// Internal Libraries
+import './global/global.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
