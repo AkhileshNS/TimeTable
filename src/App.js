@@ -10,14 +10,14 @@ import AppBar from './components/AppBar/AppBar';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <AppBar title="Time Table" />
-        <Router>
+      <Router>
+        <div className="App">
+          <AppBar title="Time Table" />
           <Switch>
             <Route path="/" component={Home} />
           </Switch>
-        </Router>
-      </div>
+        </div>
+      </Router>
     );
   }
 }
